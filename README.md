@@ -2,6 +2,11 @@
 - simulate a string wave using the wave equation
 - inspired by: https://www.youtube.com/watch?v=5THnWDz9G0Y&ab_channel=Mr.PSolver
 
+### Check it out here
+
+<a href="https://petarzarkov.github.io/wave-sim" target="_blank">Open</a>
+
+
 ## The Wave Equation
 - using the TRUE wave equation (with damping and stress-strain coupling):
 
