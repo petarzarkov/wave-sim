@@ -4,13 +4,8 @@ import { WaveString } from "@mechanics";
 
 export const Wave: FC = () => {
     const canvas  = React.useRef<HTMLCanvasElement & { align: string }>(null);
-    const color = useColorModeValue("primary.900", "primary.300");
-    const colorInverse = useColorModeValue("primary.300", "primary.900");
+    const colorMode = useColorModeValue("rgba(28, 28, 27)", "rgba(0, 0, 0)");
 
-    console.log({
-        color,
-        colorInverse
-    });
     React.useEffect(() => {
         const context = canvas.current?.getContext("2d");
         if (canvas.current && context) {
@@ -18,15 +13,15 @@ export const Wave: FC = () => {
                 points: 100,
                 canvas: canvas.current,
                 context,
-                fillStyle: "linear(to-l, #7928CA, #FF0080)",
-                strokeStyle: "red",
+                fillStyle: colorMode,
+                strokeStyle: "blue",
                 mode: "DRAG_CENTER"
             });
 
             wave.draw();
         }
 
-    }, [canvas.current]);
+    }, [canvas.current, colorMode]);
 
     return (
         <Box
