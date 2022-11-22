@@ -66,20 +66,18 @@ export class WaveString {
             e.preventDefault();
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
-        });
+        }, { passive: false });
         addEventListener("touchmove", (e) => {
             e.preventDefault();
             const touch = e.touches?.[0] || {};
             this.mouseX = touch.clientX;
             this.mouseY = touch.clientY;
-        });
+        }, { passive: false });
 
         addEventListener("mousedown", (e) => {
-            e.preventDefault();
             this.isDragging = true;
         });
         addEventListener("touchstart", (e) => {
-            e.preventDefault();
             this.isDragging = true;
         });
 
