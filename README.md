@@ -35,4 +35,4 @@ y_j^{m+1} &= \left[\frac{1}{c^2 \Delta t^2} + \frac{\gamma}{2 \Delta t} \right]^
 $$ x_c = C_w \cdot x_s
 y_c = C_w \cdot y_s + C_h / 2 $$
 
-where $ C_w $ and $ C_h $ are the width and height of the canvas in pixels
+where $C_w$ and $C_h$ are the width and height of the canvas in pixels
