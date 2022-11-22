@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
     return {
+        base: "/wave-sim/",
         build: {
             emptyOutDir: true,
             rollupOptions: {
