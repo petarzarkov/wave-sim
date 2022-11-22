@@ -10,6 +10,11 @@
     },
     "private": true,
     "version": "0.0.1",
+    "engines": {
+        "node": ">=14.18",
+        "pnpm": ">=7.3.0"
+    },
+    "packageManager": "pnpm@7.13.4",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
