@@ -26,8 +26,8 @@ jobs:
       run: |
         npm i -g pnpm
         pnpm install
-        npm install
-        npm run build
+        pnpm run lint
+        pnpm run build
     - name: Push to GitHub Pages
       # You may pin to the exact commit or the version.
       # uses: crazy-max/ghaction-github-pages@a117e4aa1fb4854d021546d2abdfac95be568a3a
