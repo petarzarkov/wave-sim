@@ -10,14 +10,14 @@ export const Wave: FC = () => {
         mouseX: 0
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [state, update] = React.useReducer<(state: typeof initialState, updates: Partial<typeof initialState>) => typeof initialState>(
         (state, updates) => {
             return {
                 ...state,
                 ...updates
             };
-        },
-    initialState
+        }, initialState
     );
 
     React.useEffect(() => {

@@ -41,7 +41,7 @@ module.exports = {
         project: ["tsconfig.json", "tsconfig.node.json"]
     },
     plugins: ["@typescript-eslint", "react"],
-    ignorePatterns: ['**/*.js'],
+    ignorePatterns: ['**/*.js', '**/*.css'],
     rules: {
         "no-void": 0,
         "react/prop-types": 0,
