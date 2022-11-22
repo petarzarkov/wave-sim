@@ -67,6 +67,7 @@ export class WaveString {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
         }, { passive: false });
+
         addEventListener("touchmove", (e) => {
             e.preventDefault();
             const touch = e.touches?.[0] || {};
@@ -74,19 +75,18 @@ export class WaveString {
             this.mouseY = touch.clientY;
         }, { passive: false });
 
-        addEventListener("mousedown", (e) => {
-            this.isDragging = true;
-        });
-        addEventListener("touchstart", (e) => {
-            this.isDragging = true;
+        ["mousedown", "touchstart"].map((e) => {
+            addEventListener(e, () => {
+                this.isDragging = true;
+            });
         });
 
-        addEventListener("mouseup", () => {
-            this.isDragging = false;
+        ["mouseup", "touchend"].map((e) => {
+            addEventListener(e, () => {
+                this.isDragging = false;
+            });
         });
-        addEventListener("touchend", () => {
-            this.isDragging = false;
-        });
+
         addEventListener("resize", () => this.setSize());
     }
 

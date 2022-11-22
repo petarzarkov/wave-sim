@@ -3,7 +3,7 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 import { WaveString } from "@mechanics";
 
 export const Wave: FC = () => {
-    const canvas  = React.useRef<HTMLCanvasElement & { align: string }>(null);
+    const canvas = React.useRef<HTMLCanvasElement & { align: string }>(null);
     const colorMode = useColorModeValue("rgba(28, 28, 27)", "rgba(0, 0, 0)");
 
     React.useEffect(() => {
@@ -28,6 +28,9 @@ export const Wave: FC = () => {
             width={"100%"}
             as={"canvas"}
             ref={canvas}
+            _hover={{
+                cursor: "grab"
+            }}
         >
         </Box>
     );
