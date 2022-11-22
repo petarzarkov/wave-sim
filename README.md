@@ -3,9 +3,9 @@
 
 ## The Wave Equation
 - using the TRUE wave equation (with damping and stress-strain coupling):
-$$ \frac{\partial^2 y}{\partial x^2} - \frac{1}{c^2}\frac{\partial^2 y}{\partial t^2} - \gamma \frac{\partial y}{\partial t} -l^2 \frac{\partial^4 y}{\partial x^4} = 0 $$
-$$ y(0, t) = y(L, t) = 0 $$
-$$ y(x, 0) = f(x) $$
+$$ \frac{\partial^2 y}{\partial x^2} - \frac{1}{c^2}\frac{\partial^2 y}{\partial t^2} - \gamma \frac{\partial y}{\partial t} -l^2 \frac{\partial^4 y}{\partial x^4} = 0
+y(0, t) = y(L, t) = 0
+y(x, 0) = f(x) $$
 
 - $y$ is the amplitude of the string
 - $x$ is the location of the string
