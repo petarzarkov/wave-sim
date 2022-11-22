@@ -63,14 +63,30 @@ export class WaveString {
         this.fillStyle = fillStyle;
 
         addEventListener("mousemove", (e) => {
+            e.preventDefault();
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
-
         });
-        addEventListener("mousedown", () => {
+        addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const touch = e.touches?.[0] || {};
+            this.mouseX = touch.clientX;
+            this.mouseY = touch.clientY;
+        });
+
+        addEventListener("mousedown", (e) => {
+            e.preventDefault();
             this.isDragging = true;
         });
+        addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            this.isDragging = true;
+        });
+
         addEventListener("mouseup", () => {
+            this.isDragging = false;
+        });
+        addEventListener("touchend", () => {
             this.isDragging = false;
         });
         addEventListener("resize", () => this.setSize());
@@ -135,7 +151,7 @@ export class WaveString {
     }
 
     private setSize() {
-        this.canvas.height = innerHeight;
+        this.canvas.height = innerHeight / innerHeight * 700;
         this.canvas.width = innerWidth;
     }
 
