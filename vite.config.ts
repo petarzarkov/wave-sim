@@ -32,14 +32,8 @@ export default defineConfig(({ mode }) => {
         },
         resolve: {
             alias: {
-                "@components": path.resolve(__dirname, "./app/components"),
-                "@contracts": path.resolve(__dirname, "./app/contracts"),
-                "@hooks": path.resolve(__dirname, "./app/hooks"),
+                "@mechanics": path.resolve(__dirname, "./app/mechanics"),
                 "@screens": path.resolve(__dirname, "./app/screens"),
-                "@config": path.resolve(__dirname, "./app/config"),
-                "@theme": path.resolve(__dirname, "./app/providers/theme"),
-                "@animation": path.resolve(__dirname, "./app/providers/animation"),
-                "@store": path.resolve(__dirname, "./app/store"),
             }
         },
         plugins: [

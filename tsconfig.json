@@ -18,14 +18,8 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@components": ["./app/components"],
-      "@contracts": ["./app/contracts"],
-      "@hooks": ["./app/hooks"],
+      "@mechanics": ["./app/mechanics"],
       "@screens": ["./app/screens"],
-      "@config": ["./app/config"],
-      "@theme": ["app/providers/theme"],
-      "@animation": ["app/providers/animation"],
-      "@store": ["./app/store"],
     }
   },
   "include": ["./app"],

@@ -1,57 +1,38 @@
 import React, { FC } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { WaveString } from "@mechanics";
 
 export const Wave: FC = () => {
-    const elementRef = React.useRef(null);
-    const initialState = {
-        isDragging: false,
-        mode: "MOVE_LEFT_END",
-        mouseY: 0,
-        mouseX: 0
-    };
+    const canvas  = React.useRef<HTMLCanvasElement & { align: string }>(null);
+    const color = useColorModeValue("primary.900", "primary.300");
+    const colorInverse = useColorModeValue("primary.300", "primary.900");
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [state, update] = React.useReducer<(state: typeof initialState, updates: Partial<typeof initialState>) => typeof initialState>(
-        (state, updates) => {
-            return {
-                ...state,
-                ...updates
-            };
-        }, initialState
-    );
-
+    console.log({
+        color,
+        colorInverse
+    });
     React.useEffect(() => {
-        addEventListener("mousemove", (e) => {
-            update({
-                mouseX: e.clientX,
-                mouseY: e.clientY
+        const context = canvas.current?.getContext("2d");
+        if (canvas.current && context) {
+            const wave = new WaveString({
+                points: 100,
+                canvas: canvas.current,
+                context,
+                fillStyle: "linear(to-l, #7928CA, #FF0080)",
+                strokeStyle: "red",
+                mode: "DRAG_CENTER"
             });
-        });
-        addEventListener("mousedown", () => {
-            update({
-                isDragging: true
-            });
-        });
-        addEventListener("mouseup", () => {
-            update({
-                isDragging: false
-            });
-        });
-        // addEventListener("resize", (e) => {
-        //     update({
-        //         mouseX: e.clientX,
-        //         mouseY: e.clientY
-        //     });
-        // });
 
-    }, []);
+            wave.draw();
+        }
+
+    }, [canvas.current]);
 
     return (
         <Box
-            ref={elementRef}
-            // width={[200, 460, 660]}
             width={"100%"}
             as={"canvas"}
+            ref={canvas}
         >
         </Box>
     );
