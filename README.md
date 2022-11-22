@@ -28,10 +28,11 @@ y_j^{m+1} &= \left[\frac{1}{c^2 \Delta t^2} + \frac{\gamma}{2 \Delta t} \right]^
 
 
 ## Converting From Canvas To String Coordinates
-### Since the string goes between 0 and 1 in "String Coordinates" $ (x_s, y_s) $
-### we can scale to the window "canvas coordinates" $ (x_c, y_c) $
+### Since the string goes between 0 and 1 in "String Coordinates" $(x_s, y_s)$
+### we can scale to the window "canvas coordinates" $(x_c, y_c)$
 ### as follows:
 
-$$ x_c = C_w \cdot x_s $$
-$$ y_c = C_w \cdot y_s + C_h / 2 $$ 
+$$ x_c = C_w \cdot x_s
+y_c = C_w \cdot y_s + C_h / 2 $$
+
 where $ C_w $ and $ C_h $ are the width and height of the canvas in pixels
